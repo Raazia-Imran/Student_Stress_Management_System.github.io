@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker - Self-Care Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li:hover a {
+            color: #fda085;
+        }
+
+        /* Dropdown */
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li ul {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            border-radius: 8px;
+        }
+
+        nav ul li:hover ul {
+            display: flex;
+        }
+
+        nav ul li ul li a {
+            padding: 8px 12px;
+            white-space: nowrap;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                width: 200px;
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            nav ul li ul {
+                position: static;
+                display: none !important;
+            }
+
+            nav ul li:hover ul {
+                display: none !important;
+            }
+
+            nav ul li.active ul {
+                display: flex !important;
+                margin-top: 10px;
+            }
+        }
+
+        /* Mood Tracker Container */
+        .container {
+            margin-top: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .glass-card h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .glass-card label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .glass-card select,
+        .glass-card textarea,
+        .glass-card button {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .glass-card select,
+        .glass-card textarea {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .glass-card button {
+            background: linear-gradient(135deg, #f6d365, #fda085);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .glass-card button:hover {
+            background: linear-gradient(135deg, #fda085, #f6d365);
+            transform: translateY(-2px);
+        }
+
+        /* Subtle Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Stress Management</div>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li>
+                <a href="#">Self-Care Hub <i class="fas fa-caret-down"></i></a>
+                <ul>
+                    <li><a href="mood-tracker.html">Mood Tracker</a></li>
+                    <li><a href="quotes-generator.html">Motivational Quotes</a></li>
+                    <li><a href="relaxation-tool.html">Relaxation Tool</a></li>
+                    <li><a href="progress-tracker.html">Progress Tracker</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mood Tracker -->
+    <div class="container">
+        <div class="glass-card">
+            <h1>Mood Tracker</h1>
+            <form>
+                <label for="mood">How are you feeling today?</label>
+                <select id="mood" name="mood">
+                    <option value="happy">😊 Happy</option>
+                    <option value="okay">😐 Okay</option>
+                    <option value="sad">😢 Sad</option>
+                    <option value="stressed">😰 Stressed</option>
+                    <option value="angry">😠 Angry</option>
+                </select>
+
+                <label for="notes">Notes (optional):</label>
+                <textarea id="notes" rows="4" placeholder="Write anything you'd like..."></textarea>
+
+                <button type="submit">Save Mood</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const navDropdowns = document.querySelectorAll('nav ul li');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' :
+                '<i class="fas fa-bars"></i>';
+        });
+
+        // Mobile dropdown toggle
+        navDropdowns.forEach(item => {
+            item.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.stopPropagation();
+                    navDropdowns.forEach(i => i.classList.remove('active'));
+                    item.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

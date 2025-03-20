@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motivational Quotes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/616de63735.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Mobile Menu Button -->
+    <div class="menu_button" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="menu">
+        <ul class="menu-list">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="focus-mode.html"><i class="fa-solid fa-clock"></i> Focus</a></li>
+            <li><a href="to-do-list.html"><i class="fa-solid fa-calendar-days"></i> Plan</a></li>
+            <li><a href="flashcard.html"><i class="fa-solid fa-pencil"></i> Learn</a></li>
+            <li><a href="dailytask.html"><i class="fa-solid fa-star"></i> Boost</a></li>
+            <li>
+                <div><i class="fa-solid fa-heart"></i> Self-Care Hub</div>
+                <ul class="menu-list" style="padding-left: 1rem;">
+                    <li><a href="mood_tracker.html">Mood Tracker</a></li>
+                    <li><a href="motivational_quotes.html">Motivational Quotes</a></li>
+                    <li><a href="breathing_tool.html">Breathing Tool</a></li>
+                    <li><a href="progress_tracker.html">Progress Tracker</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Desktop Navbar -->
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li class="navbar-item"><a href="focus-mode.html"><i class="fa-solid fa-clock"></i> Focus</a></li>
+            <li class="navbar-item"><a href="to-do-list.html"><i class="fa-solid fa-calendar-days"></i> Plan</a></li>
+            <li class="navbar-item"><a href="flashcard.html"><i class="fa-solid fa-pencil"></i> Learn</a></li>
+            <li class="navbar-item"><a href="dailytask.html"><i class="fa-solid fa-star"></i> Boost</a></li>
+            <li class="navbar-item">
+                <span><i class="fa-solid fa-heart"></i> Self-Care Hub</span>
+                <div class="dropdown-content">
+                    <a href="mood_tracker.html">Mood Tracker</a>
+                    <a href="motivational_quotes.html">Motivational Quotes</a>
+                    <a href="breathing_tool.html">Breathing Tool</a>
+                    <a href="progress-tracker.html">Progress Tracker</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Motivational Quotes Section -->
+    <section class="text-center mt-16 px-4">
+        <h1 class="text-3xl font-bold text-white mb-6">Motivational Quotes</h1>
+        <p class="text-lg text-[#d1b2ff] max-w-xl mx-auto">Boost your day with inspiring quotes to keep you motivated
+            and positive!</p>
+        <!-- Quotes content -->
+    </section>
+
+    <script src="navbar.js"></script>
+</body>
+
+</html>
